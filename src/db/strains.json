@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "Strain 1",
+        "description": "Description for Strain 1",
+        "stats": "Stats for Strain 1",
+        "nutrients": "Nutrients for Strain 1",
+        "pestManagement": "Pest Management for Strain 1"
+    },
+    {
+        "id": 2,
+        "name": "Strain 2",
+        "description": "Description for Strain 2",
+        "stats": "Stats for Strain 2",
+        "nutrients": "Nutrients for Strain 2",
+        "pestManagement": "Pest Management for Strain 2"
+    }
+]
