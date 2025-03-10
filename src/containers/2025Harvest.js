@@ -1,26 +1,29 @@
 import React, { useState, useEffect } from "react";
 import "../styles/harvest2025.css";
+import { useParams } from 'react-router-dom';
 
-const Harvest2025 = ({ match }) => {
+const Harvest2025 = () => {
   const [strain, setStrain] = useState({});
   const [strains, setStrains] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [subSection, setSubSection] = useState("stats");
   const [nutrients, setNutrients] = useState([]);
 
+  let params = useParams();
+
   useEffect(() => {
     fetch("/db/strains.json")
       .then(response => response.json())
       .then(data => {
         setStrains(data);
-        const currentStrain = data.find(strain => strain.name === match.params.strainName);
+        const currentStrain = data.find(strain => strain.name === params.strainName);
         if (currentStrain) {
           setStrain(currentStrain);
           const index = data.indexOf(currentStrain);
           setCurrentIndex(index);
         }
       });
-  }, [match.params.strainName]);
+  }, [params.strainName]);
 
   useEffect(() => {
     fetch("/db/nutrient-list.json")
@@ -33,7 +36,7 @@ const Harvest2025 = ({ match }) => {
       setCurrentIndex(currentIndex - 1);
       const previousStrain = strains[currentIndex - 1];
       setStrain(previousStrain);
-      window.history.pushState({}, "", `/2025-harvest/${previousStrain.name}/${subSection}`);
+      window.location.href = `/2025-harvest/${previousStrain.name}/${subSection}`;
     }
   };
 
@@ -42,49 +45,23 @@ const Harvest2025 = ({ match }) => {
       setCurrentIndex(currentIndex + 1);
       const nextStrain = strains[currentIndex + 1];
       setStrain(nextStrain);
-      window.history.pushState({}, "", `/2025-harvest/${nextStrain.name}/${subSection}`);
+      window.location.href = `/2025-harvest/${nextStrain.name}/${subSection}`;
     }
   };
 
   const handleSubSectionChange = (section) => {
     setSubSection(section);
-    window.history.pushState({}, "", `/2025-harvest/${strain.name}/${section}`);
-  };
+    window.location.href = `/2025-harvest/${strain.name}/${section}`;
+  }
 
   return (
-    <div className="harvest2025">
-      <h1>{strain.name}</h1>
-      <button
-        style={{ backgroundImage: `url(${require("../images/buttons/button1.png")})` }}
-        onClick={handlePreviousStrain}
-      >
-        Previous Strain
-      </button>
-      <button
-        style={{ backgroundImage: `url(${require("../images/buttons/button2.png")})` }}
-        onClick={handleNextStrain}
-      >
-        Next Strain
-      </button>
+    <div className="harvest-2025">
+      <button onClick={handlePreviousStrain}>Previous Strain</button>
+      <button onClick={handleNextStrain}>Next Strain</button>
       <div className="sub-sections">
-        <button
-          style={{ backgroundImage: `url(${require("../images/buttons/button3.png")})` }}
-          onClick={() => handleSubSectionChange("stats")}
-        >
-          Stats
-        </button>
-        <button
-          style={{ backgroundImage: `url(${require("../images/buttons/button4.png")})` }}
-          onClick={() => handleSubSectionChange("nutrients")}
-        >
-          Nutrients
-        </button>
-        <button
-          style={{ backgroundImage: `url(${require("../images/buttons/button5.png")})` }}
-          onClick={() => handleSubSectionChange("pest-management")}
-        >
-          Pest Management
-        </button>
+        <button onClick={() => handleSubSectionChange("stats")}>Stats</button>
+        <button onClick={() => handleSubSectionChange("nutrients")}>Nutrients</button>
+        <button onClick={() => handleSubSectionChange("pest-management")}>Pest Management</button>
       </div>
       {subSection === "stats" && (
         <div className="stats">
