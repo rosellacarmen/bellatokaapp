@@ -1,22 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from '../components/Header';
-import Showcase from '../components/Showcase';
-import About from '../components/About';
 import Footer from '../components/Footer';
+import Harvest2025 from './2025Harvest';
+import Contact from './Contact';
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Header />
-          <Showcase />
-          <About />
-          <Footer />
-        </Route>
-      </Switch>
-    </Router>
+    <div className="app-container">
+      <Header />
+      <Harvest2025 />
+      <Contact />
+      <Footer />
+    </div>
   );
 }
 
