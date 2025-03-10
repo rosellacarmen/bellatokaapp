@@ -1,14 +1,12 @@
-import React from 'react';
+import React from "react";
+import "../styles/about.css";
 
-const About = () => {
-    return (
-        <div>
-            <h1>Bella Toka App</h1>
-            <p>Catchy explainer</p>
-            <img src="https://example.com/stats.png" alt="Stats" />
-            <p>Link on left goes to stats page</p>
-        </div>
-    );
-};
+const About = () => (
+  <div className="about-container">
+    <h1>About Us</h1>
+    <p>text</p>
+    <p>test</p>
+  </div>
+);
 
 export default About;
