@@ -15,7 +15,6 @@ function App() {
           <About />
           <Footer />
         </Route>
-        {/* Add other routes as needed */}
       </Switch>
     </Router>
   );
