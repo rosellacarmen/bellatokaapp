@@ -42,22 +42,22 @@ body {
   }
   
   .button-1 {
-    background-image: url(src/images/buttons/button1);
+    background-image: url('../images/buttons/button1.png');
     background-size: cover;
   }
   
   .button-2 {
-    background-image: url(src/images/buttons/button2);
+    background-image: url('../images/buttons/button1.png');
     background-size: cover;
   }
   
   .button-3 {
-    background-image: url(src/images/buttons/button3);
+    background-image: url('../images/buttons/button1.png');
     background-size: cover;
   }
   
   .button-4 {
-    background-image: url(src/images/buttons/button4);
+    background-image: url('../images/buttons/button1.png');
     background-size: cover;
   }
   
