@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../styles/harvest2025.css";
+import "../styles/harvest.css";
 import { useParams } from 'react-router-dom';
 
 const Harvest2025 = () => {
@@ -88,7 +88,7 @@ const Harvest2025 = () => {
       {subSection === "pest-management" && (
         <div className="pest-management">
           <h2>Pest Management</h2>
-          <img src={require("../images/pest-management.png")} alt="Pest Management Image" />
+          <img src={require("../images/pest-management.jpg")} alt="Pest Management Image" />
           <p>Pest management body text</p>
         </div>
       )}
@@ -114,7 +114,7 @@ const Harvest2025 = () => {
       {subSection === "pest-management" && (
         <img
           className="secondary-image"
-          src={require("../images/pest-management.png")}
+          src={require("../images/pest-management.jpg")}
           alt="Secondary Image"
         />
       )}
