@@ -94,7 +94,7 @@ const Harvest2025 = () => {
       )}
       <img
         className="primary-image"
-        src={require(`../images/strains/${strain.name}.png`)}
+        src={require(`../images/strains/${strain.name}.jpg`)}
         alt="Primary Image"
       />
       {subSection === "stats" && (
