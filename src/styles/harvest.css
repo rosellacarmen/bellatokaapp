@@ -62,7 +62,7 @@ body {
   }
   
   .button-5 {
-    background-image: url(src/images/buttons/button5);
+    background-image: url('../images/buttons/button5.png');
     background-size: cover;
   }
   
