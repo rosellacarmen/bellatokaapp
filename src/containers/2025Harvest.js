@@ -4,7 +4,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import './2025Harvest.css';
 
 const Harvest2025 = () => {
-  const [strain, setStrain] = useState(null);
+  const [strains, setStrains] = useState([]);
+  const [currentStrainIndex, setCurrentStrainIndex] = useState(0);
   const { strainName, section } = useParams();
   const navigate = useNavigate();
   
@@ -13,9 +14,10 @@ const Harvest2025 = () => {
       try {
         const response = await fetch('/db/strains.json');
         const data = await response.json();
-        const currentStrain = data.find(s => s.name.toLowerCase() === strainName.toLowerCase());
-        if (currentStrain) {
-          setStrain(currentStrain);
+        setStrains(data);
+        const index = data.findIndex(s => s.name.toLowerCase() === strainName.toLowerCase());
+        if (index !== -1) {
+          setCurrentStrainIndex(index);
         }
       } catch (error) {
         console.error("Error fetching strains:", error);
@@ -25,23 +27,33 @@ const Harvest2025 = () => {
     fetchStrains();
   }, [strainName]);
 
+  const handleNavigation = (direction) => {
+    const newIndex = direction === 'next' 
+      ? (currentStrainIndex + 1) % strains.length 
+      : (currentStrainIndex - 1 + strains.length) % strains.length;
+    const newStrain = strains[newIndex];
+    navigate(`/2025-harvest/${newStrain.name.toLowerCase()}/${section}`);
+  };
+
   const handleSectionChange = (newSection) => {
     navigate(`/2025-harvest/${strainName}/${newSection}`);
   };
 
-  if (!strain) return <div>Loading...</div>;
+  if (!strains.length) return <div>Loading...</div>;
+
+  const currentStrain = strains[currentStrainIndex];
 
   return (
     <div className="harvest-page">
       <div className="strain-header">
-        <div className="strain-icon"></div>
-        <h1>{strain.name}</h1>
-        <div className="strain-icon"></div>
+        <button className="nav-button prev" onClick={() => handleNavigation('prev')} />
+        <h1>{currentStrain.name}</h1>
+        <button className="nav-button next" onClick={() => handleNavigation('next')} />
       </div>
       
       <div className="content-container">
         <div className="sidebar">
-          <div className="chart-icon"></div>
+          <div className="chart-icon" />
           <div className="navigation-buttons">
             <button 
               className={section === 'stats' ? 'active' : ''} 
@@ -66,11 +78,18 @@ const Harvest2025 = () => {
 
         <div className="main-content">
           <h2>{section.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}</h2>
-          <p>{strain[section]}</p>
+          <p>{currentStrain[section.replace('-', '')]}</p>
         </div>
 
-        <div className="strain-image">
-          <img src={strain.image} alt={strain.name} />
+        <div className="strain-images">
+          {strains.map((strain, index) => (
+            <img 
+              key={strain.id}
+              src={`/images/strains/${strain.name.toLowerCase()}.jpg`}
+              alt={strain.name}
+              className={index === currentStrainIndex ? 'active' : ''}
+            />
+          ))}
         </div>
       </div>
     </div>
