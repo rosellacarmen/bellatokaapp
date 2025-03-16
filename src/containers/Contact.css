@@ -4,9 +4,7 @@
   justify-content: space-around;
   padding: 40px;
   min-height: 100vh;
-  background-image: url('../images/coastal-background.jpg');
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 .form-section {
