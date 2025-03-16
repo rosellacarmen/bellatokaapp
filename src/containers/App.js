@@ -12,9 +12,9 @@ function App() {
       <div className="app-container">
         <Header />
         <Routes>
+          <Route path="/" element={<Harvest2025 />} />
           <Route path="/2025-harvest/*" element={<Harvest2025 />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/" element={<Harvest2025 />} />
         </Routes>
         <Footer />
       </div>
