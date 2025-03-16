@@ -12,8 +12,9 @@ function App() {
       <div className="app-container">
         <Header />
         <Routes>
-          <Route path="/" element={<Harvest2025 />} />
-          <Route path="/2025-harvest/*" element={<Harvest2025 />} />
+          <Route path="/" element={<Navigate to="/2025-harvest/applescotti/stats" />} />
+          <Route path="/2025-harvest" element={<Navigate to="/2025-harvest/applescotti/stats" />} />
+          <Route path="/2025-harvest/:strainName/:section" element={<Harvest2025 />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
