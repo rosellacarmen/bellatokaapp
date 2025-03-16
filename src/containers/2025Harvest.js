@@ -54,7 +54,13 @@ const Harvest2025 = () => {
     window.location.href = `/2025-harvest/${strain.name}/${section}`;
   }
 
-  return (
+  const [error, setError] = React.useState(null);
+
+if (error) {
+  return <div>Something went wrong. Please try again.</div>;
+}
+
+return (
     <div className="harvest-2025">
       <button onClick={handlePreviousStrain}>Previous Strain</button>
       <button onClick={handleNextStrain}>Next Strain</button>
@@ -66,14 +72,14 @@ const Harvest2025 = () => {
       {subSection === "stats" && (
         <div className="stats">
           <h2>Stats</h2>
-          <img src={require("../images/stats.png")} alt="Stats Image" />
+          <img src="https://via.placeholder.com/300x200?text=Stats" alt="Stats Image" />
           <p>Stats body text</p>
         </div>
       )}
       {subSection === "nutrients" && (
         <div className="nutrients">
           <h2>Nutrients</h2>
-          <img src={require("../images/nutrients.png")} alt="Nutrients Image" />
+          <img src="https://via.placeholder.com/300x200?text=Nutrients" alt="Nutrients Image" />
           <p>Nutrients body text</p>
           <div className="carousel">
             {nutrients.map((nutrient, index) => (
@@ -88,7 +94,7 @@ const Harvest2025 = () => {
       {subSection === "pest-management" && (
         <div className="pest-management">
           <h2>Pest Management</h2>
-          <img src={require("../images/pest-management.jpg")} alt="Pest Management Image" />
+          <img src="https://via.placeholder.com/300x200?text=Pest+Management" alt="Pest Management Image" />
           <p>Pest management body text</p>
         </div>
       )}
