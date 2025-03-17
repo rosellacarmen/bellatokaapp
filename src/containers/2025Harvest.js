@@ -13,11 +13,11 @@ const Harvest2025 = () => {
       direction === "next"
         ? (currentIndex + 1) % strains.length
         : (currentIndex - 1 + strains.length) % strains.length;
-    navigate(`/2025-harvest/${strains[newIndex]}/${section}`);
+    navigate(`/2025-harvest/${strains[newIndex].replace(/ /g, '-')}/${section}`);
   };
 
   const handleSectionChange = (newSection) => {
-    navigate(`/2025-harvest/${strainName}/${newSection}`);
+    navigate(`/2025-harvest/${strainName.replace(/ /g, '-')}/${newSection}`);
   };
 
   return (
