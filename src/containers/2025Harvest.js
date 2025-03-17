@@ -81,15 +81,16 @@ const Harvest2025 = () => {
         <div className="strain-carousel">
           {(() => {
             try {
-              const images = require(`../images/strains/${strainName}/index.js`).default;
-              return images.map((imageName, index) => (
+              const context = require.context(`../images/strains/${strainName}`, false, /\.(jpg|jpeg|png)$/);
+              const imageKeys = context.keys();
+              return imageKeys.map((key, index) => (
                 <img
-                  key={imageName}
-                  src={require(`../images/strains/${strainName}/${imageName}`)}
+                  key={key}
+                  src={context(key)}
                   alt={`${displayNames[strainName]} image ${index + 1}`}
                   className={`strain-image ${index === 0 ? 'active' : ''}`}
                   onError={(e) => {
-                    console.log(`Failed to load image: ${strainName}/${imageName}`);
+                    console.log(`Failed to load image: ${strainName}${key}`);
                     e.target.style.display = 'none';
                   }}
                 />
