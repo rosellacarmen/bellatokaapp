@@ -79,18 +79,25 @@ const Harvest2025 = () => {
         </div>
 
         <div className="strain-carousel">
-          {Array.from({ length: 3 }, (_, i) => i + 1).map((num) => (
-            <img
-              key={num}
-              src={`${process.env.PUBLIC_URL}/images/strains/${strainName}/${num}.jpg`}
-              alt={`${displayNames[strainName]} image ${num}`}
-              className={`strain-image ${num === 1 ? 'active' : ''}`}
-              onError={(e) => {
-  console.log(`Failed to load image: ${strainName}/${num}.jpg`);
-  e.target.style.display = 'none';
-}}
-            />
-          ))}
+          {Array.from({ length: 3 }, (_, i) => i + 1).map((num) => {
+            try {
+              const image = require(`../images/strains/${strainName}/${num}`);
+              return (
+                <img
+                  key={num}
+                  src={image}
+                  alt={`${displayNames[strainName]} image ${num}`}
+                  className={`strain-image ${num === 1 ? 'active' : ''}`}
+                  onError={(e) => {
+                    console.log(`Failed to load image: ${strainName}/${num}`);
+                    e.target.style.display = 'none';
+                  }}
+                />
+              );
+            } catch (error) {
+              return null;
+            }
+          })}
         </div>
       </div>
     </div>
