@@ -75,11 +75,14 @@ const Harvest2025 = () => {
         </div>
 
         <div className="strain-carousel">
-          <img
-            src={`/images/strains/${strainName}.jpg`}
-            alt={strainName}
-            className="strain-image"
-          />
+          {strains.map((strain) => (
+            <img
+              key={strain}
+              src={`/images/strains/${strain.replace(/ /g, '-')}.jpg`}
+              alt={strain}
+              className={`strain-image ${strain === strainName ? 'active' : ''}`}
+            />
+          ))}
         </div>
       </div>
     </div>
