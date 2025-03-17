@@ -79,27 +79,26 @@ const Harvest2025 = () => {
         </div>
 
         <div className="strain-carousel">
-          {Array.from({ length: 3 }, (_, i) => i + 1).map((num) => {
+          {(() => {
             try {
-              const image = require(`../images/strains/${strainName}/${num}.jpg`);
-              console.log(`Loading image: ../images/strains/${strainName}/${num}.jpg`);
-              return (
+              const images = require(`../images/strains/${strainName}/index.js`).default;
+              return images.map((imageName, index) => (
                 <img
-                  key={num}
-                  src={image}
-                  alt={`${displayNames[strainName]} image ${num}`}
-                  className={`strain-image ${num === 1 ? 'active' : ''}`}
+                  key={imageName}
+                  src={require(`../images/strains/${strainName}/${imageName}`)}
+                  alt={`${displayNames[strainName]} image ${index + 1}`}
+                  className={`strain-image ${index === 0 ? 'active' : ''}`}
                   onError={(e) => {
-                    console.log(`Failed to load image: ${strainName}/${num}.jpg`);
+                    console.log(`Failed to load image: ${strainName}/${imageName}`);
                     e.target.style.display = 'none';
                   }}
                 />
-              );
+              ));
             } catch (error) {
-              console.error(`Error loading image: ${error.message}`);
+              console.error(`Error loading images for ${strainName}: ${error.message}`);
               return null;
             }
-          })}
+          })()}
         </div>
       </div>
     </div>
