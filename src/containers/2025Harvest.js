@@ -3,7 +3,11 @@ import { useParams, useNavigate } from "react-router-dom";
 import "./2025Harvest.css";
 
 const Harvest2025 = () => {
-  const [strains] = useState(["Applescotti", "Gelato 33"]);
+  const [strains] = useState(["applescotti", "gelato-33"]);
+  const displayNames = {
+    "applescotti": "Applescotti",
+    "gelato-33": "Gelato 33"
+  };
   const { strainName, section } = useParams();
   const navigate = useNavigate();
 
@@ -13,7 +17,7 @@ const Harvest2025 = () => {
       direction === "next"
         ? (currentIndex + 1) % strains.length
         : (currentIndex - 1 + strains.length) % strains.length;
-    navigate(`/2025-harvest/${strains[newIndex].replace(/ /g, '-')}/${section}`);
+    navigate(`/2025-harvest/${strains[newIndex]}/${section}`);
   };
 
   const handleSectionChange = (newSection) => {
@@ -27,7 +31,7 @@ const Harvest2025 = () => {
           className="nav-button prev"
           onClick={() => handleNavigation("prev")}
         />
-        <h1>{strainName}</h1> {/* Using the param instead of hardcoding */}
+        <h1>{displayNames[strainName] || strainName}</h1>
         <button
           className="nav-button next"
           onClick={() => handleNavigation("next")}
