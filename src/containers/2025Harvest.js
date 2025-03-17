@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./2025Harvest.css";
@@ -11,6 +12,15 @@ const Harvest2025 = () => {
   const { strainName, section } = useParams();
   const navigate = useNavigate();
 
+  const getImages = (strain) => {
+    try {
+      return require(`../images/strains/${strain}/index.js`).default;
+    } catch (error) {
+      console.error(`Error loading image list for ${strain}`);
+      return [];
+    }
+  };
+
   const handleNavigation = (direction) => {
     const currentIndex = strains.indexOf(strainName);
     const newIndex =
@@ -21,7 +31,7 @@ const Harvest2025 = () => {
   };
 
   const handleSectionChange = (newSection) => {
-    navigate(`/2025-harvest/${strainName.replace(/ /g, '-')}/${newSection}`);
+    navigate(`/2025-harvest/${strainName}/${newSection}`);
   };
 
   return (
@@ -71,7 +81,6 @@ const Harvest2025 = () => {
               .join(" ")}
           </h2>
           <p>
-            {" "}
             {strains.find((s) => s === strainName)
               ? "Placeholder for data"
               : "Strain data not found"}
@@ -79,23 +88,23 @@ const Harvest2025 = () => {
         </div>
 
         <div className="strain-carousel">
-          {[1, 2, 3].map((num) => {
+          {getImages(strainName).map((imageName, index) => {
             try {
-              const imagePath = require(`../images/strains/${strainName}/${num}.jpg`);
+              const imagePath = require(`../images/strains/${strainName}/${imageName}`);
               return (
                 <img
-                  key={num}
+                  key={imageName}
                   src={imagePath}
-                  alt={`${displayNames[strainName]} image ${num}`}
-                  className={`strain-image ${num === 1 ? 'active' : ''}`}
+                  alt={`${displayNames[strainName]} image ${index + 1}`}
+                  className={`strain-image ${index === 0 ? 'active' : ''}`}
                   onError={(e) => {
-                    console.log(`Failed to load image: ${strainName}/${num}.jpg`);
+                    console.log(`Failed to load image: ${strainName}/${imageName}`);
                     e.target.style.display = 'none';
                   }}
                 />
               );
             } catch (error) {
-              console.error(`Error loading image ${num} for ${strainName}: ${error.message}`);
+              console.error(`Error loading image ${imageName} for ${strainName}: ${error.message}`);
               return null;
             }
           })}
