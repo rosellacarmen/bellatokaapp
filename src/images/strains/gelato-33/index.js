@@ -1,3 +1,3 @@
 
 // Add all image filenames here
-export default Array.from({length: 1000}, (_, i) => `${i + 1}.jpg`);
+export default ["1.jpg", "2.jpg", "3.jpg"];
