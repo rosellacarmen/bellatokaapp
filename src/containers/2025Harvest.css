@@ -82,11 +82,15 @@
   position: relative;
   height: 600px;
   overflow: hidden;
+  border: 3px solid #00A3FF;
+  border-radius: 8px;
+  padding: 10px;
 }
 
 .strain-image {
   position: absolute;
   max-width: 100%;
+  max-height: 100%;
   height: auto;
   object-fit: contain;
   opacity: 0;
