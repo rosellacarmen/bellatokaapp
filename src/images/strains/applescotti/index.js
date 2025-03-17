@@ -1,7 +1,2 @@
-
 // Add all image filenames here
-export default [
-  'bud.jpg',
-  'plant.jpg',
-  'trim.jpg'
-];
+export default ["1.jpg", "flowering.jpg", "harvest.jpg"];
