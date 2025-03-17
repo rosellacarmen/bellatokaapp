@@ -82,9 +82,10 @@ const Harvest2025 = () => {
           {Array.from({ length: 3 }, (_, i) => i + 1).map((num) => (
             <img
               key={num}
-              src={`/src/strains/${strainName}/${num}.jpg`}
+              src={`/images/strains/${strainName}/${num}.jpg`}
               alt={`${displayNames[strainName]} image ${num}`}
               className={`strain-image ${num === 1 ? 'active' : ''}`}
+              onError={(e) => e.target.style.display = 'none'}
             />
           ))}
         </div>
