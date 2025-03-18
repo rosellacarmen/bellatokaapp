@@ -85,6 +85,7 @@
   border: 3px solid #00A3FF;
   border-radius: 8px;
   padding: 10px;
+  cursor: pointer;
 }
 
 .strain-image {
@@ -100,4 +101,62 @@
 .strain-image.active {
   opacity: 1;
   z-index: 1;
+}
+
+.expanded-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.expanded-overlay.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.expanded-image {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.nav-area {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.nav-area:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-left {
+  left: 0;
+  cursor: w-resize;
+}
+
+.nav-right {
+  right: 0;
+  cursor: e-resize;
+}
+
+.nav-center {
+  left: 40%;
+  width: 20%;
+  cursor: zoom-out;
 }

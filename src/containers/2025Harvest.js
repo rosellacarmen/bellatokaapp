@@ -5,6 +5,9 @@ import "./2025Harvest.css";
 
 const Harvest2025 = () => {
   const [strains] = useState(["applescotti", "gelato-33"]);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = getImages(strainName);
   const displayNames = {
     "applescotti": "Applescotti",
     "gelato-33": "Gelato 33"
@@ -87,7 +90,7 @@ const Harvest2025 = () => {
           </p>
         </div>
 
-        <div className="strain-carousel">
+        <div className="strain-carousel" onClick={() => setIsExpanded(true)}>
           {getImages(strainName).map((imageName, index) => {
             try {
               const imagePath = require(`../images/strains/${strainName}/${imageName}`);
@@ -96,7 +99,7 @@ const Harvest2025 = () => {
                   key={imageName}
                   src={imagePath}
                   alt={`${displayNames[strainName]} image ${index + 1}`}
-                  className={`strain-image ${index === 0 ? 'active' : ''}`}
+                  className={`strain-image ${index === currentImageIndex ? 'active' : ''}`}
                   onError={(e) => {
                     console.log(`Failed to load image: ${strainName}/${imageName}`);
                     e.target.style.display = 'none';
@@ -108,6 +111,27 @@ const Harvest2025 = () => {
               return null;
             }
           })}
+        </div>
+        <div className={`expanded-overlay ${isExpanded ? 'active' : ''}`}>
+          {isExpanded && (
+            <>
+              <div className="nav-area nav-left" onClick={(e) => {
+                e.stopPropagation();
+                setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+              }} />
+              <div className="nav-area nav-center" onClick={() => setIsExpanded(false)} />
+              <div className="nav-area nav-right" onClick={(e) => {
+                e.stopPropagation();
+                setCurrentImageIndex((prev) => (prev + 1) % images.length);
+              }} />
+              <img
+                src={require(`../images/strains/${strainName}/${images[currentImageIndex]}`)}
+                alt={`${displayNames[strainName]} expanded`}
+                className="expanded-image"
+                onClick={(e) => e.stopPropagation()}
+              />
+            </>
+          )}
         </div>
       </div>
     </div>
