@@ -7,11 +7,6 @@ const Harvest2025 = () => {
   const [strains] = useState(["applescotti", "gelato-33"]);
   const [isExpanded, setIsExpanded] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const images = getImages(strainName);
-  const displayNames = {
-    "applescotti": "Applescotti",
-    "gelato-33": "Gelato 33"
-  };
   const { strainName, section } = useParams();
   const navigate = useNavigate();
 
@@ -23,6 +18,14 @@ const Harvest2025 = () => {
       return [];
     }
   };
+
+  const images = getImages(strainName);
+  const displayNames = {
+    "applescotti": "Applescotti",
+    "gelato-33": "Gelato 33"
+  };
+  const { strainName, section } = useParams();
+  const navigate = useNavigate();
 
   const handleNavigation = (direction) => {
     const currentIndex = strains.indexOf(strainName);
