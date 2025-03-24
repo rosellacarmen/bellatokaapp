@@ -89,7 +89,7 @@ const Harvest2025 = () => {
           </h2>
           <p>
             {strains.find((s) => s === strainName)
-              ? "Placeholder for data"
+              ? require('../db/body.js').default[section][strainName]
               : "Strain data not found"}
           </p>
         </div>
