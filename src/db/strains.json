@@ -1,18 +1,61 @@
+
 [
     {
         "id": 1,
         "name": "Applescotti",
-        "description": "Description for Strain 1",
-        "stats": "Stats for Strain 1",
-        "nutrients": "Nutrients for Strain 1",
-        "pestManagement": "Pest Management for Strain 1"
+        "description": "A hybrid strain known for its sweet apple-like aroma",
+        "stats": {
+            "thc": "24%",
+            "cbd": "1%",
+            "floweringTime": "8-9 weeks",
+            "yield": "500g/m²",
+            "height": "Medium"
+        },
+        "nutrients": {
+            "vegetative": {
+                "nitrogen": "High",
+                "phosphorus": "Medium",
+                "potassium": "Medium"
+            },
+            "flowering": {
+                "nitrogen": "Low",
+                "phosphorus": "High",
+                "potassium": "High"
+            }
+        },
+        "pestManagement": {
+            "commonPests": ["Spider Mites", "Aphids"],
+            "preventiveMeasures": ["Regular inspection", "Proper ventilation"],
+            "treatments": ["Neem oil", "Beneficial insects"]
+        }
     },
     {
         "id": 2,
         "name": "Gelato 33",
-        "description": "Description for Strain 2",
-        "stats": "Stats for Strain 2",
-        "nutrients": "Nutrients for Strain 2",
-        "pestManagement": "Pest Management for Strain 2"
+        "description": "A potent hybrid with sweet and creamy flavor notes",
+        "stats": {
+            "thc": "22%",
+            "cbd": "0.5%",
+            "floweringTime": "9-10 weeks",
+            "yield": "450g/m²",
+            "height": "Short to Medium"
+        },
+        "nutrients": {
+            "vegetative": {
+                "nitrogen": "Medium",
+                "phosphorus": "Medium",
+                "potassium": "High"
+            },
+            "flowering": {
+                "nitrogen": "Low",
+                "phosphorus": "High",
+                "potassium": "High"
+            }
+        },
+        "pestManagement": {
+            "commonPests": ["Thrips", "Fungus Gnats"],
+            "preventiveMeasures": ["Humidity control", "Air circulation"],
+            "treatments": ["Sticky traps", "Organic pesticides"]
+        }
     }
 ]
