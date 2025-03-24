@@ -24,8 +24,6 @@ const Harvest2025 = () => {
     "applescotti": "Applescotti",
     "gelato-33": "Gelato 33"
   };
-  const { strainName, section } = useParams();
-  const navigate = useNavigate();
 
   const handleNavigation = (direction) => {
     const currentIndex = strains.indexOf(strainName);
