@@ -54,8 +54,8 @@ const Harvest2025 = () => {
       <div className="content-container">
         <div className="sidebar">
           <img 
-            src={require("../images/icons/chart-icon.png")} 
-            alt="Chart Icon" 
+            src={require(`../images/icons/${section}.png`)} 
+            alt={`${section} Icon`} 
             className="chart-icon"
           />
           <div className="navigation-buttons">
