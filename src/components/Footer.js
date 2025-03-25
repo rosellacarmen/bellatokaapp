@@ -3,12 +3,12 @@ import "../styles/footer.css";
 
 const links = [
   {
-    url: "enterprise.bellatoka.app/under-construction",
+    url: "bellatoka.app/under-construction",
     imageSrc: `${process.env.PUBLIC_URL}/images/footer/enterprise.png`,
     altText: "Enterprise Login"
   },
   {
-    url: "user.bellatoka.app/under-construction",
+    url: "bellatoka.app/under-construction",
     imageSrc: `${process.env.PUBLIC_URL}/images/footer/user.png`,
     altText: "User Login"
   },
