@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 import Harvest2025 from './2025Harvest';
 import Contact from './Contact';
 
@@ -17,7 +17,7 @@ function App() {
           <Route path="/2025-harvest/:strainName/:section" element={<Harvest2025 />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );
