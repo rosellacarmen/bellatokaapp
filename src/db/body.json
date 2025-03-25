@@ -9,7 +9,23 @@
     "gelato-33": "FLOWER"
   },
   "pest-management": {
-    "applescotti": "Hambone",
-    "gelato-33": "Hambone"
+    "applescotti": [
+      "Start = 6/3",
+      "molt x = 6/15",
+      "molt x = 6/15",
+      "molt x = 6/15",
+      "molt x = 6/15",
+      "Regalia = 7/2",
+      "Harvest = 9/11"
+    ],
+    "gelato-33": [
+      "Start = 6/3",
+      "molt x = 6/15",
+      "molt x = 6/15",
+      "molt x = 6/15",
+      "molt x = 6/15",
+      "Regalia = 7/2",
+      "Harvest = 9/11"
+    ]
   }
-}
+  }
