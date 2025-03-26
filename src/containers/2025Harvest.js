@@ -104,7 +104,7 @@ const Harvest2025 = () => {
                 <img
                   key={imageName}
                   src={imagePath}
-                  alt={`${displayNames[strainName]} image ${index + 1}`}
+                  alt={`${displayNames[strainName]} ${index + 1}`}
                   className={`strain-image ${index === currentImageIndex ? 'active' : ''}`}
                   onError={(e) => {
                     console.log(`Failed to load image: ${strainName}/${imageName}`);
