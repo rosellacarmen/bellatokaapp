@@ -1,7 +1,7 @@
 # TO DO:
 * **Images**: Sort images \src\images\strains\<strain>
-
-
+* **Page Breaks**: When going to https://bellatoka.app/ it redirects to bellatoka.app/2025-harvest/applescotti/stats as it should.  However, when the refresh button is clicked, the website breaks.
+* **Favicon** Favicon needs to show, it currently does not.
 
 
 
