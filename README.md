@@ -1,3 +1,12 @@
+# TO DO:
+* **Images**: Sort images \src\images\strains\<strain>
+
+
+
+
+
+
+
 # Dependencies Needed
 Here is a list of dependencies that are commonly used in a React application:
 
