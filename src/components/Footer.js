@@ -1,29 +1,29 @@
 import React from "react";
 import "../styles/footer.css";
 
-// const links = [
-//   {
-//     url: "bellatoka.app/under-construction",
-//     imageSrc: `${process.env.PUBLIC_URL}/images/footer/enterprise.png`,
-//     altText: "Enterprise Login"
-//   },
-//   {
-//     url: "bellatoka.app/under-construction",
-//     imageSrc: `${process.env.PUBLIC_URL}/images/footer/user.png`,
-//     altText: "User Login"
-//   },
-//   {
-//     url: "https://github.com/corviato1/bellatokaapp",
-//     imageSrc: `${process.env.PUBLIC_URL}/images/footer/github.png`,
-//     altText: "GitHub Repository"
-//   }
-// ];
+const links = [
+  {
+    url: "bellatoka.app/under-construction",
+    imageSrc: "/images/footer/enterprise.png",
+    altText: "Enterprise Login"
+  },
+  {
+    url: "bellatoka.app/under-construction",
+    imageSrc: "/images/footer/user.png",
+    altText: "User Login"
+  },
+  {
+    url: "https://github.com/corviato1/bellatokaapp",
+    imageSrc: "/images/footer/github.png",
+    altText: "GitHub Repository"
+  }
+];
 
 const Footer = () => (
   <div className="footer-container">
     {links.map((link, index) => (
       <a
-        key={index} // Unique key for each link
+        key={index} 
         href={link.url}
         target="_blank"
         rel="noopener noreferrer"
