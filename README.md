@@ -1,7 +1,15 @@
 # TO DO:
 * **Page Breaks**: When going to https://bellatoka.app/ it redirects to bellatoka.app/2025-harvest/applescotti/stats as it should.  However, when the refresh button is clicked, the website breaks.
 
-
+# Include in Stats:
+* Start Date
+* End Date
+* Flower Date
+* Harvest Date
+* Decontamination Machine Date
+* Cure Machine Date
+* Number of Plants
+* 
 
 
 
