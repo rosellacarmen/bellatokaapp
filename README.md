@@ -1,3 +1,7 @@
+# Bugs!
+* There are so many images that they will not load.  May be best to use IPFS and view via [indirect] url fecth
+
+
 # TO DO:
 * **Page Breaks**: When going to https://bellatoka.app/ it redirects to bellatoka.app/2025-harvest/applescotti/stats as it should.  However, when the refresh button is clicked, the website breaks.
 
