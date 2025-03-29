@@ -5,8 +5,16 @@
     "gelato-33": "VEG"
   },
   "nutrients": {
-    "applescotti": "FLOWER",
-    "gelato-33": "FLOWER"
+    "applescotti": [
+      "Power SI Potassium Silicate",
+      "House and Garden Coco A",
+      "<pending>"
+    ],
+    "gelato-33": [
+      "Power SI Potassium Silicate",
+      "House and Garden Coco A",
+      "<pending>"
+    ]
   },
   "pest-management": {
     "applescotti": [
