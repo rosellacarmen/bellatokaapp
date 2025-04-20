@@ -1,4 +1,3 @@
-
 export const content = {
   stats: {
     applescotti: "<div class='content-item'>VEG</div>",
@@ -23,8 +22,8 @@ export const content = {
       "<div class='content-item'>molt x = 6/15</div>",
       "<div class='content-item'>molt x = 6/15</div>",
       "<div class='content-item'>molt x = 6/15</div>",
-      "<div class='content-item'>Regalia = 7/2</div>",
-      "<div class='content-item'>Harvest = 9/11</div>"
+      "<div class='content-item'><a href='/pesticide-list' target='_self'>Regalia = 7/2</a></div>",
+      "<div class='content-item'><a href='#' onclick='window.open(\"https://google.com\", \"_blank\")'>Harvest = 9/11</a></div>"
     ].join(''),
     "gelato-33": [
       "<div class='content-item'>Start = 6/3</div>",
@@ -32,8 +31,8 @@ export const content = {
       "<div class='content-item'>molt x = 6/15</div>",
       "<div class='content-item'>molt x = 6/15</div>",
       "<div class='content-item'>molt x = 6/15</div>",
-      "<div class='content-item'>Regalia = 7/2</div>",
-      "<div class='content-item'>Harvest = 9/11</div>"
+      "<div class='content-item'><a href='/pesticide-list' target='_self'>Regalia = 7/2</a></div>",
+      "<div class='content-item'><a href='#' onclick='window.open(\"https://google.com\", \"_blank\")'>Harvest = 9/11</a></div>"
     ].join('')
   }
 };
