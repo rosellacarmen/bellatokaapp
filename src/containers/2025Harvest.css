@@ -318,3 +318,16 @@
   width: 20%;
   cursor: zoom-out;
 }
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  color: #75B9E7;
+}
+
+.select-nutrient-prompt {
+  text-align: center;
+  color: #666;
+  padding: 20px;
+}
