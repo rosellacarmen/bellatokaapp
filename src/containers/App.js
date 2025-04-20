@@ -5,6 +5,7 @@ import Header from '../components/Header';
 // import Footer from '../components/Footer';
 import Harvest2025 from './2025Harvest';
 import Contact from './Contact';
+import PesticideList from '../components/PesticideList';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/2025-harvest" element={<Navigate to="/2025-harvest/applescotti/stats" />} />
           <Route path="/2025-harvest/:strainName/:section" element={<Harvest2025 />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/pesticide-list" element={<PesticideList />} />
         </Routes>
         {/* <Footer /> */}
       </div>
