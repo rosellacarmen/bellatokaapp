@@ -1,5 +1,4 @@
-// import React, { useState, useEffect } from "react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./2025Harvest.css";
 import { content } from '../db/content'; // Added import for content
@@ -9,8 +8,22 @@ const Harvest2025 = () => {
   const [strains] = useState(["applescotti", "gelato-33"]);
   const [isExpanded, setIsExpanded] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [selectedNutrient, setSelectedNutrient] = useState(null);
   const { strainName, section } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleNutrientClick = (e) => {
+      const nutrientEl = e.target.closest('.clickable');
+      if (nutrientEl && section === 'nutrients') {
+        const imageNum = nutrientEl.dataset.image;
+        setSelectedNutrient(imageNum);
+      }
+    };
+
+    document.addEventListener('click', handleNutrientClick);
+    return () => document.removeEventListener('click', handleNutrientClick);
+  }, [section]);
 
   const getImages = (strain) => {
     try {
@@ -104,15 +117,16 @@ const displayNames = {
         </div>
 
         <div className="strain-carousel section-4" onClick={() => setIsExpanded(true)}>
-          {section === 'nutrients' || section === 'pest-management' ? (
-            nutrientImages.map((imagePath, index) => (
+          {section === 'nutrients' ? (
+            selectedNutrient ? (
               <img
-                key={index}
-                src={imagePath}
-                alt={`Nutrient Guide ${index + 1}`}
-                className={`strain-image ${index === currentImageIndex ? 'active' : ''}`}
+                src={require(`../images/nutrients/${selectedNutrient}.png`)}
+                alt={`Nutrient ${selectedNutrient}`}
+                className="strain-image active"
               />
-            ))
+            ) : (
+              <div className="select-nutrient-prompt">Click a nutrient to view details</div>
+            )
           ) : (
             strainImages.map((imageName, index) => {
               try {
@@ -141,15 +155,15 @@ const displayNames = {
             <>
               <div className="nav-area nav-left" onClick={(e) => {
                 e.stopPropagation();
-                setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+                setCurrentImageIndex((prev) => (prev - 1 + strainImages.length) % strainImages.length);
               }} />
               <div className="nav-area nav-center" onClick={() => setIsExpanded(false)} />
               <div className="nav-area nav-right" onClick={(e) => {
                 e.stopPropagation();
-                setCurrentImageIndex((prev) => (prev + 1) % images.length);
+                setCurrentImageIndex((prev) => (prev + 1) % strainImages.length);
               }} />
               <img
-                src={require(`../images/strains/${strainName}/${images[currentImageIndex]}`)}
+                src={require(`../images/strains/${strainName}/${strainImages[currentImageIndex]}`)}
                 alt={`${displayNames[strainName]} expanded`}
                 className="expanded-image"
                 onClick={(e) => e.stopPropagation()}
