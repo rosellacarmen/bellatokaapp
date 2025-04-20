@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./2025Harvest.css";
-import { content } from '../db/content'; // Added import for content
+import { content } from '../db/content';
 
 
 const Harvest2025 = () => {
@@ -35,9 +35,16 @@ const Harvest2025 = () => {
   };
 
   const strainImages = getImages(strainName);
-const nutrientImages = Array.from({length: 26}, (_, i) => require(`../images/nutrients/${String(i + 1).padStart(2, '0')}.png`));
-  
-const displayNames = {
+  const getNutrientImage = (imageName) => {
+    try {
+      return require(`../images/nutrients/${imageName}.png`);
+    } catch (error) {
+      console.error(`Error loading nutrient image: ${imageName}`);
+      return null; // Return null instead of throwing an error to gracefully handle missing images.
+    }
+  };
+
+  const displayNames = {
     "applescotti": "Applescotti",
     "gelato-33": "Gelato 33"
   };
@@ -120,9 +127,13 @@ const displayNames = {
           {section === 'nutrients' ? (
             selectedNutrient ? (
               <img
-                src={require(`../images/nutrients/${selectedNutrient}.png`)}
+                src={getNutrientImage(selectedNutrient)}
                 alt={`Nutrient ${selectedNutrient}`}
                 className="strain-image active"
+                onError={(e) => {
+                  console.error(`Failed to load nutrient image: ${selectedNutrient}`);
+                  e.target.style.display = 'none'; // Hide image on error
+                }}
               />
             ) : (
               <div className="select-nutrient-prompt">Click a nutrient to view details</div>
@@ -139,13 +150,13 @@ const displayNames = {
                     className={`strain-image ${index === currentImageIndex ? 'active' : ''}`}
                     onError={(e) => {
                       console.log(`Failed to load image: ${strainName}/${imageName}`);
-                      e.target.style.display = 'none';
+                      e.target.style.display = 'none'; // Hide image on error
                     }}
                   />
                 );
               } catch (error) {
                 console.error(`Error loading image ${imageName} for ${strainName}: ${error.message}`);
-                return null;
+                return null; // Return null to prevent rendering errors
               }
             })
           )}
@@ -167,6 +178,10 @@ const displayNames = {
                 alt={`${displayNames[strainName]} expanded`}
                 className="expanded-image"
                 onClick={(e) => e.stopPropagation()}
+                onError={(e) => {
+                  console.error(`Failed to load expanded image: ${strainName}/${strainImages[currentImageIndex]}`);
+                  e.target.style.display = 'none';
+                }}
               />
             </>
           )}
