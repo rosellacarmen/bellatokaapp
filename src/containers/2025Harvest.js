@@ -1,8 +1,9 @@
 // import React, { useState, useEffect } from "react";
 import React, { useState } from "react";
-
 import { useParams, useNavigate } from "react-router-dom";
 import "./2025Harvest.css";
+import { content } from '../db/content'; // Added import for content
+
 
 const Harvest2025 = () => {
   const [strains] = useState(["applescotti", "gelato-33"]);
@@ -39,27 +40,35 @@ const Harvest2025 = () => {
     navigate(`/2025-harvest/${strainName}/${newSection}`);
   };
 
+  const sectionContent = content[section] ? content[section][strainName] : "Strain data not found";
+  let imagePath;
+
+  if (section === 'pest-management') {
+    imagePath = require(`../images/icons/pest-management.png`);
+  } else {
+    imagePath = require(`../images/icons/${section}.png`);
+  }
+
+
   return (
     <div className="harvest-page">
-      <div className="strain-header">
-        <button
-          className="nav-button prev"
-          onClick={() => handleNavigation("prev")}
-        />
-        <h1>{displayNames[strainName] || strainName}</h1>
-        <button
-          className="nav-button next"
-          onClick={() => handleNavigation("next")}
-        />
+      <div className="section-1"> {/* Section 1 */}
+        <div className="strain-header">
+          <button
+            className="nav-button prev"
+            onClick={() => handleNavigation("prev")}
+          />
+          <h1>{displayNames[strainName] || strainName}</h1>
+          <button
+            className="nav-button next"
+            onClick={() => handleNavigation("next")}
+          />
+        </div>
       </div>
 
-      <div className="content-container">
-        <div className="sidebar">
-          <img 
-            src={require(`../images/icons/${section}.png`)} 
-            alt={`${section} Icon`} 
-            className="chart-icon"
-          />
+      <div className="section-container"> {/*Sections 2, 3, and 4 */}
+        <div className="sidebar section-2">
+          <img src={imagePath} alt={`${section} Icon`} className="chart-icon" />
           <div className="navigation-buttons">
             <button
               className={`nav-btn ${section === "stats" ? "active" : ""}`}
@@ -82,21 +91,17 @@ const Harvest2025 = () => {
           </div>
         </div>
 
-        <div className="main-content">
+        <div className="main-content section-3">
           <h2>
             {section
               .split("-")
               .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
               .join(" ")}
           </h2>
-          <p>
-            {strains.find((s) => s === strainName)
-              ? require('../db/body.json')[section][strainName]
-              : "Strain data not found"}
-          </p>
+          <div dangerouslySetInnerHTML={{ __html: sectionContent }} />
         </div>
 
-        <div className="strain-carousel" onClick={() => setIsExpanded(true)}>
+        <div className="strain-carousel section-4" onClick={() => setIsExpanded(true)}>
           {getImages(strainName).map((imageName, index) => {
             try {
               const imagePath = require(`../images/strains/${strainName}/${imageName}`);
