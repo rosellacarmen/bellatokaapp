@@ -21,8 +21,10 @@ const Harvest2025 = () => {
     }
   };
 
-  const images = getImages(strainName);
-  const displayNames = {
+  const strainImages = getImages(strainName);
+const nutrientImages = Array.from({length: 26}, (_, i) => require(`../images/nutrients/${String(i + 1).padStart(2, '0')}.png`));
+  
+const displayNames = {
     "applescotti": "Applescotti",
     "gelato-33": "Gelato 33"
   };
@@ -102,26 +104,37 @@ const Harvest2025 = () => {
         </div>
 
         <div className="strain-carousel section-4" onClick={() => setIsExpanded(true)}>
-          {getImages(strainName).map((imageName, index) => {
-            try {
-              const imagePath = require(`../images/strains/${strainName}/${imageName}`);
-              return (
-                <img
-                  key={imageName}
-                  src={imagePath}
-                  alt={`${displayNames[strainName]} ${index + 1}`}
-                  className={`strain-image ${index === currentImageIndex ? 'active' : ''}`}
-                  onError={(e) => {
-                    console.log(`Failed to load image: ${strainName}/${imageName}`);
-                    e.target.style.display = 'none';
-                  }}
-                />
-              );
-            } catch (error) {
-              console.error(`Error loading image ${imageName} for ${strainName}: ${error.message}`);
-              return null;
-            }
-          })}
+          {section === 'nutrients' || section === 'pest-management' ? (
+            nutrientImages.map((imagePath, index) => (
+              <img
+                key={index}
+                src={imagePath}
+                alt={`Nutrient Guide ${index + 1}`}
+                className={`strain-image ${index === currentImageIndex ? 'active' : ''}`}
+              />
+            ))
+          ) : (
+            strainImages.map((imageName, index) => {
+              try {
+                const imagePath = require(`../images/strains/${strainName}/${imageName}`);
+                return (
+                  <img
+                    key={imageName}
+                    src={imagePath}
+                    alt={`${displayNames[strainName]} ${index + 1}`}
+                    className={`strain-image ${index === currentImageIndex ? 'active' : ''}`}
+                    onError={(e) => {
+                      console.log(`Failed to load image: ${strainName}/${imageName}`);
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                );
+              } catch (error) {
+                console.error(`Error loading image ${imageName} for ${strainName}: ${error.message}`);
+                return null;
+              }
+            })
+          )}
         </div>
         <div className={`expanded-overlay ${isExpanded ? 'active' : ''}`}>
           {isExpanded && (
