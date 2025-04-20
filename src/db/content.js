@@ -1,7 +1,7 @@
 export const content = {
   stats: {
-    applescotti: "<div class='content-item'>VEG</div>",
-    "gelato-33": "<div class='content-item'>VEG</div>"
+    applescotti: "<div class='content-item'>Data needed</div>",
+    "gelato-33": "<div class='content-item'>Data needed</div>"
   },
   nutrients: {
     applescotti: [
