@@ -1,18 +1,32 @@
 export const content = {
   stats: {
-    applescotti: "<div class='content-item'>Data needed</div>",
-    "gelato-33": "<div class='content-item'>Data needed</div>"
+    applescotti: "<div class='content-item'>VEG</div>",
+    "gelato-33": "<div class='content-item'>VEG</div>"
   },
   nutrients: {
     applescotti: [
-      "<div class='content-item'>Power SI Potassium Silicate</div>",
-      "<div class='content-item'>House and Garden Coco A</div>",
-      "<div class='content-item'>&lt;pending&gt;</div>"
+      "<div class='content-item clickable' data-image='01'>Power SI Potassium Silicate</div>",
+      "<div class='content-item clickable' data-image='02'>House and Garden Coco A</div>",
+      "<div class='content-item clickable' data-image='03'>House and Garden Coco B</div>",
+      "<div class='content-item clickable' data-image='04'>Athena Cleanse</div>",
+      "<div class='content-item clickable' data-image='05'>Power SI Bloom</div>",
+      "<div class='content-item clickable' data-image='06'>Zeus Juice</div>",
+      "<div class='content-item clickable' data-image='07'>House and Garden Roots</div>",
+      "<div class='content-item clickable' data-image='08'>House and Garden Multi Zen</div>",
+      "<div class='content-item clickable' data-image='09'>House and Garden Top Booster</div>",
+      "<div class='content-item clickable' data-image='10'>House and Garden Bud XL</div>"
     ].join(''),
     "gelato-33": [
-      "<div class='content-item'>Power SI Potassium Silicate</div>",
-      "<div class='content-item'>House and Garden Coco A</div>",
-      "<div class='content-item'>&lt;pending&gt;</div>"
+      "<div class='content-item clickable' data-image='01'>Power SI Potassium Silicate</div>",
+      "<div class='content-item clickable' data-image='02'>House and Garden Coco A</div>",
+      "<div class='content-item clickable' data-image='03'>House and Garden Coco B</div>",
+      "<div class='content-item clickable' data-image='04'>Athena Cleanse</div>",
+      "<div class='content-item clickable' data-image='05'>Power SI Bloom</div>",
+      "<div class='content-item clickable' data-image='06'>Zeus Juice</div>",
+      "<div class='content-item clickable' data-image='07'>House and Garden Roots</div>",
+      "<div class='content-item clickable' data-image='08'>House and Garden Multi Zen</div>",
+      "<div class='content-item clickable' data-image='09'>House and Garden Top Booster</div>",
+      "<div class='content-item clickable' data-image='10'>House and Garden Bud XL</div>"
     ].join('')
   },
   "pest-management": {
