@@ -35,6 +35,15 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.content-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.content-item a:hover {
+  text-decoration: underline;
+}
+
 .content-item:last-child {
   border-bottom: none;
 }
@@ -102,7 +111,7 @@
   .section-container {
     flex-direction: column;
   }
-  
+
   .section-2 {
     width: 100%;
     order: 1;
