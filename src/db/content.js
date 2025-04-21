@@ -1,7 +1,27 @@
 export const content = {
   stats: {
-    applescotti: "<div class='content-item'>VEG</div>",
-    "gelato-33": "<div class='content-item'>VEG</div>",
+    applescotti: [
+      "<div class='content-item'>Clones received = _/_/2024</div>",
+      "<div class='content-item'> ___ </div>",
+      "<div class='content-item'> ___ </div>",
+      "<div class='content-item'> ___ </div>",
+      "<div class='content-item'> ___ </div>",
+      "<div class='content-item'>Plants cut down and hung = _/_/2025</div>",
+      "<div class='content-item'>Plants first trim = _/_/2025</div>",
+      "<div class='content-item'>Plants cured = _/_/2025</div>",
+      "<div class='content-item'>Plants second trim = _/_/2025</div>",
+    ].join(""),
+    "gelato-33": [
+      "<div class='content-item'>Clones received = _/_/2024</div>",
+      "<div class='content-item'> ___ </div>",
+      "<div class='content-item'> ___ </div>",
+      "<div class='content-item'> ___ </div>",
+      "<div class='content-item'> ___ </div>",
+      "<div class='content-item'>Plants cut down and hung = _/_/2025</div>",
+      "<div class='content-item'>Plants first trim = _/_/2025</div>",
+      "<div class='content-item'>Plants cured = _/_/2025</div>",
+      "<div class='content-item'>Plants second trim = _/_/2025</div>",
+    ]
   },
   nutrients: {
     applescotti: [
@@ -19,6 +39,7 @@ export const content = {
       "<div class='content-item clickable' data-image='liquid-karma'>Botanicare Liquid Karma</div>",
       "<div class='content-item clickable' data-image='vitamino'>Botanicare Vitamino</div>",
       "<div class='content-item clickable' data-image='nitrogen-boost'>House and Garden Nitrogen Boost</div>",
+      
       "</div>",
       "<div>",
       "<h3>Flower Stage</h3>",
@@ -93,17 +114,14 @@ export const content = {
       "<div class='content-item clickable' data-image='Img_6'>Img_6</div>",
       "<div class='content-item clickable' data-image='Img_7'>Img_7</div>",
       "<div class='content-item clickable' data-image='Img_8'>Img_8</div>",
+      "<div class='content-item'><a href='#' onclick='window.open(\"https://google.com\", \"_blank\")'>Harvest = 9/11</a></div>",
       "</div>",
       "</div>",
     ].join(""),
   },
   "pest-management": {
     applescotti: [
-      "<div class='content-item'>Start = 6/3</div>",
-      "<div class='content-item'>molt x = 6/15</div>",
-      "<div class='content-item'>molt x = 6/15</div>",
-      "<div class='content-item'>molt x = 6/15</div>",
-      "<div class='content-item'>molt x = 6/15</div>",
+      "<div class='content-item'> Neem Oil </div>",
       "<div class='content-item'><a href='/pesticide-list' target='_self'>Regalia = 7/2</a></div>",
       "<div class='content-item'><a href='#' onclick='window.open(\"https://google.com\", \"_blank\")'>Harvest = 9/11</a></div>",
     ].join(""),
