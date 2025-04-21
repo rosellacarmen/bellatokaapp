@@ -127,7 +127,7 @@ export const content = {
       "<div class='content-item clickable' data-image='<needed>'>Molt-X<a>  </a></a><a href='#' onclick='window.open(\"https://bioworksinc.com/products/moltx/\", \"_blank\")'>Link</a></div>",
       "<div class='content-item clickable' data-image='<needed>'>The Amazing Doctor Zymes<a>  </a></a><a href='#' onclick='window.open(\"https://www.doctorzymes.com/pesticide-free-insecticide.php\", \"_blank\")'>Link</a></div>",
 
-      "<div class='content-item'><a href='#' onclick='window.open(\"bellatoka.app/pesticide-list\", \"_blank\")'>Full List of Legal Pesticides for Indoor Cannabis Cultivation</a></div>",
+      "<div class='content-item'><a href='#' onclick='window.open(\"https://bellatoka.app/pesticide-list\", \"_blank\")'>Full List of Legal Pesticides for Indoor Cannabis Cultivation</a></div>",
     ].join(""),
     "gelato-33": [
       "<div class='content-item clickable' data-image='<needed>'>Neem Oil<a>  </a></a><a href='#' onclick='window.open(\"https://google.com\", \"_blank\")'>Link</a></div>",
