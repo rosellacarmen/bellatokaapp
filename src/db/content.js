@@ -29,7 +29,7 @@ export const content = {
       "<div>",
       "<h3>Vegetative Stage</h3>",
       "<div class='content-item clickable' data-image='power-si'>Power SI Potassium Silicate</div>",
-      "<div class='content-item clickable' data-image='cocos-a'>House and Garden Coco A</div>",
+      "<div class='content-item clickable' data-image='cocos-a'>House and Garden Cocos A</div>",
       "<div class='content-item clickable' data-image='cocos-b'>House and Garden Cocos B</div>",
       "<div class='content-item clickable' data-image='cal-mag'>Botanicare Cal-Mag Plus</div>",
       "<div class='content-item clickable' data-image='diamond-nectar'>General Hydroponics Diamond Nectar</div>",
