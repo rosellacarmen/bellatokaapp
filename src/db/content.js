@@ -122,9 +122,12 @@ export const content = {
   },
   "pest-management": {
     applescotti: [
-      "<div class='content-item'> Neem Oil </div>",
-      "<div class='content-item'><a href='/pesticide-list' target='_self'>Regalia = 7/2</a></div>",
-      "<div class='content-item'><a href='#' onclick='window.open(\"https://google.com\", \"_blank\")'>Harvest = 9/11</a></div>",
+      "<div class='content-item clickable' data-image='<needed>'>Neem Oil<a>  </a></a><a href='#' onclick='window.open(\"https://google.com\", \"_blank\")'>Link</a></div>",
+      "<div class='content-item clickable' data-image='<needed>'>Regalia CG Biofungicide<a>  </a></a><a href='#' onclick='window.open(\"https://google.com\", \"_blank\")'>Link</a></div>",
+      "<div class='content-item clickable' data-image='<needed>'>Molt-X<a>  </a></a><a href='#' onclick='window.open(\"https://google.com\", \"_blank\")'>Link</a></div>",
+      "<div class='content-item clickable' data-image='<needed>'>The Amazing Doctor Zymes<a>  </a></a><a href='#' onclick='window.open(\"https://google.com\", \"_blank\")'>Link</a></div>",
+      
+      "<div class='content-item'><a href='#' onclick='window.open(\"bellatoka.app/pesticide-list\", \"_blank\")'>Full List of Legal Pesticides for Indoor Cannabis Cultivation</a></div>",
     ].join(""),
     "gelato-33": [
       "<div class='content-item'>Start = 6/3</div>",
