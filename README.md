@@ -1,3 +1,4 @@
+
 # Bugs!
 * There are so many images that they will not load.  May be best to use IPFS and view via [indirect] url fecth
 
@@ -19,6 +20,11 @@
 
 # Dependencies Needed
 Here is a list of dependencies that are commonly used in a React application:
+
+npm install styled-components
+npm install react-router-dom
+npm install react-pdf
+npm install 
 
 ## Frontend Dependencies
 * **react**: The main library for building user interfaces.
