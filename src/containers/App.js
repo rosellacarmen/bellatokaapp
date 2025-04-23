@@ -18,6 +18,7 @@ function App() {
           <Route path="/2025-harvest/:strainName/:section" element={<Harvest2025 />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/pesticide-list" element={<PesticideList />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         {/* <Footer /> */}
       </div>
