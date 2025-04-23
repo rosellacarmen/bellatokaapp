@@ -1,3 +1,4 @@
+
 import React from "react";
 import styled from "styled-components";
 import "./PesticideList.css";
@@ -32,7 +33,7 @@ const Button = styled.button`
 `;
 
 const PesticideList = () => {
-  const pdfUrl = "/src/db/pesticide.pdf";
+  const pdfUrl = "/pesticide.pdf";
 
   const handleDownload = async () => {
     try {
@@ -57,11 +58,12 @@ const PesticideList = () => {
     <SecureContainer>
       <h1>Pesticide List</h1>
       <PDFContainer>
-        <object
-          data={pdfUrl}
-          type="application/pdf"
+        <iframe
+          src={pdfUrl}
+          title="Pesticide List PDF"
           width="100%"
           height="100%"
+          style={{ border: "none" }}
         >
           <p>
             Your browser doesn't support embedded PDFs.
@@ -69,7 +71,7 @@ const PesticideList = () => {
               Download PDF
             </Button>
           </p>
-        </object>
+        </iframe>
       </PDFContainer>
       <Button onClick={handleDownload}>
         Download PDF
