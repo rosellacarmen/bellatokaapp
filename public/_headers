@@ -28,5 +28,4 @@
 /*.html
   Cache-Control: public, no-cache
   # Don't cache HTML files
-/*
-  Content-Type: application/pdf
+
