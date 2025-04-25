@@ -1,5 +1,9 @@
 
 import React from "react";
+import { Worker, Viewer } from "@react-pdf-viewer/core";
+import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import styled from "styled-components";
 import "./PesticideList.css";
 
@@ -33,6 +37,7 @@ const Button = styled.button`
 `;
 
 const PesticideList = () => {
+  const defaultLayoutPluginInstance = defaultLayoutPlugin();
   const pdfUrl = "/pesticide.pdf";
 
   const handleDownload = async () => {
@@ -58,20 +63,12 @@ const PesticideList = () => {
     <SecureContainer>
       <h1>Pesticide List</h1>
       <PDFContainer>
-        <iframe
-          src={pdfUrl}
-          title="Pesticide List PDF"
-          width="100%"
-          height="100%"
-          style={{ border: "none" }}
-        >
-          <p>
-            Your browser doesn't support embedded PDFs.
-            <Button onClick={handleDownload}>
-              Download PDF
-            </Button>
-          </p>
-        </iframe>
+        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+          <Viewer
+            fileUrl={pdfUrl}
+            plugins={[defaultLayoutPluginInstance]}
+          />
+        </Worker>
       </PDFContainer>
       <Button onClick={handleDownload}>
         Download PDF
