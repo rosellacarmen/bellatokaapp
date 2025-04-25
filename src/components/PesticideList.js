@@ -58,20 +58,19 @@ const PesticideList = () => {
     <SecureContainer>
       <h1>Pesticide List</h1>
       <PDFContainer>
-        <iframe
-          src={pdfUrl}
-          title="Pesticide List PDF"
+        <object
+          data={pdfUrl}
+          type="application/pdf"
           width="100%"
           height="100%"
-          style={{ border: "none" }}
         >
           <p>
-            Your browser doesn't support embedded PDFs.
+            Unable to display PDF.
             <Button onClick={handleDownload}>
               Download PDF
             </Button>
           </p>
-        </iframe>
+        </object>
       </PDFContainer>
       <Button onClick={handleDownload}>
         Download PDF
