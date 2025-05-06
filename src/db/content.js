@@ -9,7 +9,7 @@ export const content = {
       "<div class='content-item'>Plants cut down and hung = _/_/2025</div>",
       "<div class='content-item'>Plants first trim = _/_/2025</div>",
       "<div class='content-item'>Plants cured = _/_/2025</div>",
-      "<div class='content-item'>Plants second trim = _/_/2025</div>",
+      "<div class='content-item'>Plants second trim = _/x/2025</div>",
     ].join(""),
     "gelato-33": [
       "<div class='content-item'>Clones received = _/_/2024</div>",
