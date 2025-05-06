@@ -1,26 +1,27 @@
 export const content = {
   stats: {
     applescotti: [
-      "<div class='content-item'>Clones received = _/_/2024</div>",
+      "<div class='content-item'>Official Name = Bella Toka 12/22/24 Gelato 33 Zone 1</div>",
+      "<div class='content-item'>Clones received = 03/16/2024</div>",
       "<div class='content-item'> ___ </div>",
       "<div class='content-item'> ___ </div>",
       "<div class='content-item'> ___ </div>",
       "<div class='content-item'> ___ </div>",
-      "<div class='content-item'>Plants cut down and hung = _/_/2025</div>",
-      "<div class='content-item'>Plants first trim = _/_/2025</div>",
-      "<div class='content-item'>Plants cured = _/_/2025</div>",
-      "<div class='content-item'>Plants second trim = _/x/2025</div>",
+      "<div class='content-item'>Plants cut down and hung = 12/22/2024</div>",
+      "<div class='content-item'>Plants first trim = 01/28/2025</div>",
+      "<div class='content-item'>Plants cured = 02/19/2025</div>",
+      "<div class='content-item'>Plants second trim = 05/06/2025</div>",
     ].join(""),
     "gelato-33": [
-      "<div class='content-item'>Clones received = _/_/2024</div>",
+      "<div class='content-item'>Clones received =03/16/2024</div>",
       "<div class='content-item'> ___ </div>",
       "<div class='content-item'> ___ </div>",
       "<div class='content-item'> ___ </div>",
       "<div class='content-item'> ___ </div>",
-      "<div class='content-item'>Plants cut down and hung = _/_/2025</div>",
-      "<div class='content-item'>Plants first trim = _/_/2025</div>",
-      "<div class='content-item'>Plants cured = _/_/2025</div>",
-      "<div class='content-item'>Plants second trim = _/_/2025</div>",
+      "<div class='content-item'>Plants cut down and hung = 12/22/2024</div>",
+      "<div class='content-item'>Plants first trim = 03/25/2025</div>",
+      "<div class='content-item'>Plants cured = 04/08/2025</div>",
+      "<div class='content-item'>Plants second trim = 05/06/2025</div>",
     ]
   },
   nutrients: {
